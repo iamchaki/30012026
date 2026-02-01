@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Builders</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <a href="#" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">URBAN<br>BUILDERS</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#login" class="btn-quote">Login</a>
+        </div>
+    </nav>
+
+    <section class="carousel-section" id="home">
+        <div class="carousel-container">
+
+            <div class="slide active-slide fade">
+                <img src="images/slide1.png" alt="Bridge Construction at Sunset">
+                <div class="caption">BUILDING BRIDGES TO THE FUTURE</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="images/slide2.png" alt="Residential Building Construction">
+                <div class="caption">RESIDENTIAL EXCELLENCE</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="images/slide3.png" alt="Steel Structure Construction Site">
+                <div class="caption">INDUSTRIAL STRENGTH SOLUTIONS</div>
+            </div>
+
+
+
+
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-hero primary">Explore Our Work</a>
+                <a href="#services" class="btn-hero secondary">Our Services</a>
+            </div>
+
+            <div class="carousel-controls">
+                <button id="pauseBtn" class="control-btn">⏸</button>
+                <button id="playBtn" class="control-btn" style="display: none;">▶</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

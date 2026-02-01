@@ -1,0 +1,277 @@
+/* --- General Reset and Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navbar Styling (Matching image_0.png) --- */
+.navbar {
+    background-color: #1a2533;
+    /* Dark blue background */
+    padding: 1rem 0;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #e67e22;
+    /* Orange accent color */
+}
+
+.logo-text {
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* Nav Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #b0b8c4;
+    /* Lighter gray-blue for inactive links */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: white;
+}
+
+/* Button Styling */
+.btn-quote {
+    background-color: #e67e22;
+    /* Orange color from the image */
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-quote:hover {
+    background-color: #d35400;
+    /* Darker orange on hover */
+}
+
+
+/* --- Carousel Section Styling --- */
+.carousel-section {
+    position: relative;
+    width: 100%;
+    /* Height depends on your design preferences, 
+       using viewport height minus navbar height roughly */
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    background-color: #333;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style for individual slides */
+.slide {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Class added by JS to show the current slide */
+.active-slide {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures images fill the space without stretching */
+    filter: brightness(0.7);
+    /* Darken images slightly so text pops */
+}
+
+/* Optional Caption Styling */
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: 80%;
+}
+
+/* Carousel Controls Styling */
+/* Carousel Controls Styling */
+.carousel-controls {
+    position: absolute;
+    bottom: 30px;
+    left: auto;
+    /* Reset the left centering */
+    right: 30px;
+    /* Move to the right corner */
+    transform: none;
+    /* Remove the centering transform */
+    z-index: 10;
+    /* Removed padding/background from container so it doesn't look like a box */
+}
+
+.control-btn {
+    background: rgba(0, 0, 0, 0.5);
+    /* Add background directly to the button */
+    border: 2px solid white;
+    color: white;
+
+    /* Make it circular */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    /* Center the icon */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    /* Remove text padding */
+
+    cursor: pointer;
+    font-size: 1.2rem;
+    /* Adjust icon size */
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: white;
+    color: #1a2533;
+}
+
+/* Fading animation effect */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* --- Hero Action Buttons (New Addition) --- */
+
+.hero-actions {
+    position: absolute;
+    /* Positioned relative to the container, same as the controls */
+    bottom: 100px;
+    /* 100px from bottom ensures it sits above the controls (which are at 30px) */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    /* Higher z-index ensures they are clickable over the image */
+    display: flex;
+    gap: 20px;
+    /* Space between the two buttons */
+    width: 100%;
+    justify-content: center;
+}
+
+/* General Button Styles */
+/* General Button Styles */
+.btn-hero {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    /* UPDATE THIS LINE */
+    border-radius: 50px;
+    /* Changed from 5px to 50px for bullnose corners */
+
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Primary Button (Orange - 'Explore Our Work') */
+.btn-hero.primary {
+    background-color: #e67e22;
+    /* Matches your site's orange accent */
+    color: white;
+    border: 2px solid #e67e22;
+}
+
+.btn-hero.primary:hover {
+    background-color: #d35400;
+    border-color: #d35400;
+}
+
+/* Secondary Button (Outline - 'Our Services') */
+.btn-hero.secondary {
+    background-color: transparent;
+    /* See-through background */
+    color: white;
+    border: 2px solid white;
+    /* White border */
+}
+
+.btn-hero.secondary:hover {
+    background-color: white;
+    color: #1a2533;
+    /* Dark blue text on hover */
+}
+
+/* OPTIONAL: Adjust Caption Position */
+/* Since we added buttons, we might want to push the text caption up slightly 
+   so it doesn't overlap with the new buttons on smaller screens */
+.caption {
+    top: 45%;
+    /* Moved up from 50% */
+}
