@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Set view engine to EJS
 app.set('view engine', 'ejs');
@@ -53,4 +53,5 @@ app.get('/', (req, res) => {
 // Start Server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
+
 });
